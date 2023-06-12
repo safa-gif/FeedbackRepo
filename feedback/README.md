@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# the files in our react app
+
+package.json : includes all of our dependencies react, react-dom,react-scripts, web-vitals...
+
+We also have two folders:
+- public: this folder contains all of our static files. 
+We have the index.html which the single page that is loaded in the browser (SPA). Everything we build iin our react app is done within the index.html specifically within the root.
+We can add CDI if we want to use fontawesome...
+
+- src: source has many files such as indes.js, that contains the content to display on the browser.
