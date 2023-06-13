@@ -69,9 +69,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-# the files in our react app
+###  the files and folders  in our react app
 
-package.json : includes all of our dependencies react, react-dom,react-scripts, web-vitals...
+- package.json : includes all of our dependencies react, react-dom,react-scripts, web-vitals...
+
+- git ignore : is a git repository that specifies files for got not to track. 
+Blank lines are ignored. 
+Lines begining with # are ignored.
+Any files that matches the pattern will not be tracked by git.
 
 We also have two folders:
 - public: this folder contains all of our static files. 
@@ -79,3 +84,19 @@ We have the index.html which the single page that is loaded in the browser (SPA)
 We can add CDI if we want to use fontawesome...
 
 - src: source has many files such as indes.js, that contains the content to display on the browser.
+
+We are re-builing the index.js and App.js files.
+
+### React Components 
+
+They can be :
+- classes : the old way to creat a react components.
+- functions: functional compoents using react hooks (state, life cycles)
+
+React usues Strict Mode: offers additional chaks and warnings.
+
+We have many ways to do styling in React: the easiest way is by creating a global CSS file.
+
+### Introduction to JSX : Extension
+
+It is a Syntax Extension for JavaScript, it enables us to write HTML elements within JavaScript compoents.
