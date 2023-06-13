@@ -73,14 +73,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - package.json : includes all of our dependencies react, react-dom,react-scripts, web-vitals...
 
-- git ignore : is a git repository that specifies files for got not to track. 
+- git ignore : is a git repository that specifies files for git not to track. 
 Blank lines are ignored. 
 Lines begining with # are ignored.
 Any files that matches the pattern will not be tracked by git.
 
 We also have two folders:
+
 - public: this folder contains all of our static files. 
-We have the index.html which the single page that is loaded in the browser (SPA). Everything we build iin our react app is done within the index.html specifically within the root.
+We have the index.html which the single page that is loaded in the browser (SPA). Everything we build in our react app is done within the index.html specifically within the root.
 We can add CDI if we want to use fontawesome...
 
 - src: source has many files such as indes.js, that contains the content to display on the browser.
@@ -90,13 +91,29 @@ We are re-builing the index.js and App.js files.
 ### React Components 
 
 They can be :
-- classes : the old way to creat a react components.
+- classes : the old way to create a react components.
 - functions: functional compoents using react hooks (state, life cycles)
 
-React usues Strict Mode: offers additional chaks and warnings.
+React usues Strict Mode: offers additional check-ups and warnings.
 
 We have many ways to do styling in React: the easiest way is by creating a global CSS file.
 
 ### Introduction to JSX : Extension
 
 It is a Syntax Extension for JavaScript, it enables us to write HTML elements within JavaScript compoents.
+
+In JSX we always need to have one parent element containing different HTML elements. It can be a `<div></div>` or `<React.Fragment></React.Fragment> | <></>`.
+
+### The two Attribute tahta are different from regular HTML Attribute 
+
+- Class is a reserved name is React to refer to CSS Class in React we use ClassName.
+
+- For: attribute in forms can not be used with React beacuse it stands for For loop instead it is replaced with htmlFor.
+
+### Dynamic Values and Lists in JSX:
+
+in our App component before the return we can create function, varibales... We can display the varibles content in the return inside the fragment by using `{varibleName}`. The `{}` can be used for any type of expressions.
+
+
+
+
