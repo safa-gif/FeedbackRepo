@@ -112,8 +112,53 @@ In JSX we always need to have one parent element containing different HTML eleme
 
 ### Dynamic Values and Lists in JSX:
 
-in our App component before the return we can create function, varibales... We can display the varibles content in the return inside the fragment by using `{varibleName}`. The `{}` can be used for any type of expressions.
+in our App component before the return we can create function, varibales... 
+
+We can display the varibles content in the return inside the fragment by using `{varibleName}`. 
+The `{}` can be used for any type of expressions.
 
 
+### Builing our first component in Feebdack App
+
+- We are going to create a new component called Header inside components( will be containing all our componenets ) folder under src folder.
+
+- We need to install ES7 React/Redux... extensions from Visual Studio Code (allows us to generate components automatically  )
+
+- props: can be passed into a component (they are the properties of that component)
+
+We can set default props inside the component.
+We can also specify the type of our props with propTypes.
+
+- We are creating the FeedbackItem file  which is a component that shows a single febdack item, which will include the rating and the text.
+
+- We are importing useState in FeebdbackItem File, the text and the rating should be part of the state.
+
+- To use the setRating inside the useState for the variable rating we created a temporary button, and made sure to add an event when we cn share the satte of rating.
+### Styling in React
+
+- We can apply style using inside the component we set `<Compnent style={{property: 'settings'}}></Compnent>` or we can set a `const variableStyle= {property: 'settings'}` before the return and then we use it in the compnent `<Component style={variableStyle}></Component>` we use a styling file and imported in the component.
+
+- We also can use special styling libraries such as Chakra UI, Material UI, we we get specific components that have already designed components Navbars, Footers...
 
 
+### State 
+
+- A state in react is immutable, we can only change it using its associated method.
+
+There are two types pf state:
+
+- Compoenet Level State : is a data that is associated with a one specific component. No other component need to use that data.
+
+Exemple: a navigation that have an opening and a closing state, there is no reason to acess that from any other component.
+
+- App Level/ Global State :
+we have different ways to store app level state
+
+Exemple: is our feeback items state we nedd to use those in multiple components : will have our feebddack list where we will display the list items so we need to share that state among multiple components. 
+
+
+- useState : is a specific hook in React that enables us to use state
+
+- In some cases we need to have access to a previous state, we can pass functions inside the setRating instead of passing a value.
+
+- We can use the useState hook to create a state and a function that will update the state.
