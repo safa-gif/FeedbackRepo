@@ -2,7 +2,7 @@ import React from 'react'
 import FeedbackItem from './FeedbackItem';
 import PropTypes from 'prop-types'
 
-function FeedbackList({feedback}) {
+function FeedbackList({feedback, handleDelete}) {
     //conditioning the output based on the existance or the length of the feedback
    if(!feedback || feedback.length === 0){
     return <p>There is no feedback yet</p>;
@@ -13,7 +13,7 @@ function FeedbackList({feedback}) {
         {/* mapping the props pf feedback */}
       {feedback.map((item)=>(
         <>
-        <FeedbackItem key={item.id} item={item}>
+        <FeedbackItem key={item.id} item={item} handleDelete={handleDelete}>
         </FeedbackItem>
         {/* <div>{item.rating}</div> */}
         </>

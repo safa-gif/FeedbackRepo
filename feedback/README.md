@@ -161,6 +161,10 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - In some cases we need to have access to a previous state, we can pass functions inside the setRating instead of passing a value.
 
+
+### Components and Reactivity
+
+
 - We can use the useState hook to create a state and a function that will update the state.
 
 - We will be ading some app level state, which is going to be all of our feedback items, we will have to pass anything we need from that global state in our App.js.
@@ -181,4 +185,11 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We are using PropTypes to set the types of the props for our different components.
 
+- We are adding icons that allow us t delete and modify the feedback items. are using react-icons, this library includes fontawesome as well as other libraries: material icons and bootstrap,to achieve the quest.
+
+- We are using handleDelete to delete the feebackItem from the list of feedback that are dsiplayed on the App.
+
+- We need the deletefeedback Function in App.js because its we where we can actually delete it. We are props drilling from feedbackItem into FeedbackList into App where the action actually happens. We are currently not using Context API.
+
+- We are going to create our feedbackStats component: we'll count the average of the rating and displays the number of the feedback items.
 
