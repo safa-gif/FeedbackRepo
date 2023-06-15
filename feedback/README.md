@@ -162,3 +162,23 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 - In some cases we need to have access to a previous state, we can pass functions inside the setRating instead of passing a value.
 
 - We can use the useState hook to create a state and a function that will update the state.
+
+- We will be ading some app level state, which is going to be all of our feedback items, we will have to pass anything we need from that global state in our App.js.
+
+- we created a folder data containing FeedbackData.js and we've passed it to useState (App.js)
+
+- To be able to display the list of feeback we create a file and we are going to pass its props to App using useState feedback.
+
+- We are mapping the list by using `<FeedbackList feedback={feedback}/>` 
+
+- We are creting a component strictly for styling, we'll be creting the card under the shared folder that relies under the components folder.
+
+- The content of the card will be displayed as its children and destructured within Card props.
+
+- We are using conditional class if the class card reversed is true than we are applying the style of reverse `<div className={`card ${reverse && 'reverse'}`}>`.
+
+- We are using conditional styling of the card where we are setting the reverse class of the card inline: `<div className="card" style={{backgroundColor:reverse ? "#000": "E966A0", color:reverse ? "E966A0": "#000"}}></div>`.
+
+- We are using PropTypes to set the types of the props for our different components.
+
+
