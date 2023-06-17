@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
 //we use propos in the brackets of the component
 function Header({text, bgColor, textColor}) {
@@ -10,7 +11,7 @@ function Header({text, bgColor, textColor}) {
   return (
     <header style={headerStyles}>
       <div className="container">
-        <h2>{text}</h2>
+        <Link style={{textDecoration: 'none', color: "rgb(255, 106, 149)"}} to="/"><h2>{text}</h2></Link>
       </div>
     </header>
   )

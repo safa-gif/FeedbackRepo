@@ -145,6 +145,11 @@ input:focus {
   right: 40px;
 }
 
+/* Styling the active links */
+.active {
+  background-color: #000;
+  color: red;
+}
 .btn {
   color: #fff;
   border: 0;

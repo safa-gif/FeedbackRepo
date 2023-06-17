@@ -33,7 +33,7 @@ It is a Syntax Extension for JavaScript, it enables us to write HTML elements wi
 
 In JSX we always need to have one parent element containing different HTML elements. It can be a `<div></div>` or `<React.Fragment></React.Fragment> | <></>`.
 
-### The two Attribute tahta are different from regular HTML Attribute 
+### The two Attribute that are different from regular HTML Attribute 
 
 - Class is a reserved name is React to refer to CSS Class in React we use ClassName.
 
@@ -104,7 +104,7 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We are mapping the list by using `<FeedbackList feedback={feedback}/>` 
 
-- We are creting a component strictly for styling, we'll be creting the card under the shared folder that relies under the components folder.
+- We are creating a component strictly for styling, we'll be creating the card under the shared folder that relies under the components folder.
 
 - The content of the card will be displayed as its children and destructured within Card props.
 
@@ -125,11 +125,58 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We are going to create our feedbackStats component: we'll count the average of the rating and displays the number of the feedback items.
 
-### Adding FeedbackForm component, real time input validation and Rating Selct Component
+### Adding FeedbackForm component, real time input validation and Rating Select Component
 
 - We'll be adding the form where we can add feedback with FeedbackForm Component.
 
 - We are using forms we talk about component level state, we have a piece of state for each element in the form.  
 
 - We will be adding some real time validation on the review from the input and will disable the btn until we have 10 caracters entered.
+
+- We are passing the props select into FeebdackForm from RatingSelect where are returning the selected radio button.
+
+- We will be sudmitting our form right now, by creating an event handler in the form by using onSumit event on the form.
+
+- We will be adding handleAdd inside the FeedbackForm in App.js that usues addHandler method.
+
+- we are using UUID of react to create an id to the new feedback.
+
+### Fade Animation with Framer Motion
+
+- We need to install framer-motion library v4.1.17
+
+### Creating Routing (React router-dom)
+
+
+- We'll be installing react-router-dom that enables user in the client side routing. 
+
+- Client side routing allows your app to update the URL from a link click without making another request for another document from the server.
+
+- Instead, your app can immediately render some new UI and make data requests with fetch to update the page with new information.
+
+- We create AboutPages under pages folder where separete pages where will be routing are held.
+
+- We are using Browser Router from react-router-dom : uses the HTML 5  histoy API to keep our UI in sync with the URL.
+
+- we can use Hash Browser as well from react-router-dom : usues the hash portion of the URL to keep it in sync. (#)
+
+- Browser router as Routes, Route, Routes ,  Routes.
+
+### NavLinks and using useParams :
+
+
+- We use `Link` whenever we want to do any inner linking in our site. It is  from the library react-router-dom to be able to navigate between pages in out react app, the navigation is instant no refreshing.
+
+- We can pass objects in the link `<Link to={{pathname: '/about', search: '?sort=name', hash: '#hello'}}/>`.
+
+- NavLink is similiar to Link, it is also used to navigate, but it can also hold a specific class for active links.
+
+- We can specify a certain styling for active links , than we utilize `NavLink`.
+
+- We use the hook useParams to get the params for exemple the number of the post or the idea of the post.
+
+### Navigate and NESTTED Routes
+
+
+- A `<Navigate> `element changes the current location when it is rendered. It's a component wrapper around useNavigate, and accepts all the same arguments as props.
 
