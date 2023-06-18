@@ -1,5 +1,6 @@
-###  the files and folders  in our react app
+### Section: 1 Introduction
 
+# the files and folders  in our react app
 - package.json : includes all of our dependencies react, react-dom,react-scripts, web-vitals...
 
 - git ignore : is a git repository that specifies files for git not to track. 
@@ -17,7 +18,7 @@ We can add CDI if we want to use fontawesome...
 
 We are re-builing the index.js and App.js files.
 
-### React Components 
+# React Components 
 
 They can be :
 - classes : the old way to create a react components.
@@ -27,19 +28,20 @@ React usues Strict Mode: offers additional check-ups and warnings.
 
 We have many ways to do styling in React: the easiest way is by creating a global CSS file.
 
-### Introduction to JSX : Extension
+### Section2: React Basics & JSX :
+# Introduction to JSX : Extension
 
 It is a Syntax Extension for JavaScript, it enables us to write HTML elements within JavaScript compoents.
 
 In JSX we always need to have one parent element containing different HTML elements. It can be a `<div></div>` or `<React.Fragment></React.Fragment> | <></>`.
 
-### The two Attribute that are different from regular HTML Attribute 
+# The two Attribute that are different from regular HTML Attribute 
 
 - Class is a reserved name is React to refer to CSS Class in React we use ClassName.
 
 - For: attribute in forms can not be used with React beacuse it stands for For loop instead it is replaced with htmlFor.
 
-### Dynamic Values and Lists in JSX:
+# Dynamic Values and Lists in JSX:
 
 in our App component before the return we can create function, varibales... 
 
@@ -47,8 +49,9 @@ We can display the varibles content in the return inside the fragment by using `
 The `{}` can be used for any type of expressions.
 
 
-### Builing our first component in Feebdack App
+### Section: 3 Components, Props & Stats
 
+#  Builing our first component in Feebdack App
 - We are going to create a new component called Header inside components( will be containing all our componenets ) folder under src folder.
 
 - We need to install ES7 React/Redux... extensions from Visual Studio Code (allows us to generate components automatically  )
@@ -63,14 +66,14 @@ We can also specify the type of our props with propTypes.
 - We are importing useState in FeebdbackItem File, the text and the rating should be part of the state.
 
 - To use the setRating inside the useState for the variable rating we created a temporary button, and made sure to add an event when we cn share the satte of rating.
-### Styling in React
+# Styling in React
 
 - We can apply style using inside the component we set `<Compnent style={{property: 'settings'}}></Compnent>` or we can set a `const variableStyle= {property: 'settings'}` before the return and then we use it in the compnent `<Component style={variableStyle}></Component>` we use a styling file and imported in the component.
 
 - We also can use special styling libraries such as Chakra UI, Material UI, we we get specific components that have already designed components Navbars, Footers...
 
 
-### State 
+# State 
 
 - A state in react is immutable, we can only change it using its associated method.
 
@@ -91,7 +94,7 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 - In some cases we need to have access to a previous state, we can pass functions inside the setRating instead of passing a value.
 
 
-### Components and Reactivity
+# Components and Reactivity
 
 
 - We can use the useState hook to create a state and a function that will update the state.
@@ -114,8 +117,10 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We are using PropTypes to set the types of the props for our different components.
 
-### Counting AVG ratings, Deleting feedback Item
+### Section 4: Forms, Validation & Simple Animation
 
+
+# Counting AVG ratings, Deleting feedback Item
 
 - We are adding icons that allow us to delete and modify the feedback items. are using react-icons, this library includes fontawesome as well as other libraries: material icons and bootstrap,to achieve the quest.
 
@@ -125,7 +130,7 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We are going to create our feedbackStats component: we'll count the average of the rating and displays the number of the feedback items.
 
-### Adding FeedbackForm component, real time input validation and Rating Select Component
+# Adding FeedbackForm component, real time input validation and Rating Select Component
 
 - We'll be adding the form where we can add feedback with FeedbackForm Component.
 
@@ -145,8 +150,9 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We need to install framer-motion library v4.1.17
 
-### Creating Routing (React router-dom)
+### Section 5: Creating Routes & links
 
+# Creating Routing (React router-dom)
 
 - We'll be installing react-router-dom that enables user in the client side routing. 
 
@@ -162,7 +168,7 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - Browser router as Routes, Route, Routes ,  Routes.
 
-### NavLinks and using useParams :
+# NavLinks and using useParams :
 
 
 - We use `Link` whenever we want to do any inner linking in our site. It is  from the library react-router-dom to be able to navigate between pages in out react app, the navigation is instant no refreshing.
@@ -175,8 +181,30 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We use the hook useParams to get the params for exemple the number of the post or the idea of the post.
 
-### Navigate and NESTTED Routes
+# Navigate and NESTTED Routes
 
 
 - A `<Navigate> `element changes the current location when it is rendered. It's a component wrapper around useNavigate, and accepts all the same arguments as props.
+
+- We can display certain information then navigate to certain pages with `useNavigate`.
+
+- `Routes, Routes`are used in componenet to manage embbedded routing such as we are using in Post component.
+
+### Section6 :  Creating a ContextAPI, useContext Hook & Deployment
+
+# !SECTION : Creating a Context Provider
+
+- Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+- We use `useContext, createContext` hooks because the highest compoenent in the stack requires access to the state from nested componnents. Without `Context` hook we use `prop drilling`:  passing the state as "props" through each nested component. 
+
+- We import  `createContext` and initialized it, next we use `ContextProvider` to wrap the tree of components taht need the`State Context`. 
+
+- With the `ContextProvider` we wrap child components and supply the state value.
+
+- To be able to use Contest in a child component, we need to access it using the `useContext` hook.
+- We create a FeedbackContext file and a provider  in our app under src.
+
+- We changes the addFeeback method into a global state. We will be using `useeffect` hook because we need to know the previous state of the feedback item which we want to edit.
+
 
