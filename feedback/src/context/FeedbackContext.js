@@ -1,5 +1,5 @@
 import { createContext , useState, useEffect} from "react";
-import {v4 as uuidv4} from 'uuid'
+// import {v4 as uuidv4} from 'uuid'
 
 const FeedbackContext = createContext()
 
@@ -8,6 +8,7 @@ export const FeedbackProvider = ({children}) => {
     const [isLoading, setIsLoading] = useState(true)
     const [feedback, setFeedback] = useState(
         [
+            // We noo longer need this static data we're fetching it from the JSON Server
             // {
             //     id: 1,
             //     text: "This is a feedback that is coming from the feedbackContext",
@@ -29,9 +30,11 @@ export const FeedbackProvider = ({children}) => {
         fetchFeedback()
     },[])
 
-    //Fetch feedback
+    // Fetch feedback with an async method
     const fetchFeedback = async () => {
-        const response = await fetch(`http://localhost:5000/feedback?_sort=id&_order=desc`)
+        // waiting for data to be loaded from the Json-Server
+        // Applying a sorting to the data by id and ordering it
+        const response = await fetch(`/feedback?_sort=id&_order=desc`)
         const data = await response.json()
         setFeedback(data)
         setIsLoading(false)
@@ -40,8 +43,15 @@ export const FeedbackProvider = ({children}) => {
         item: {},
         edit: false
     })
-    const deleteFeedback = (id)=>{
+
+    //  Deleting Feedback
+    const deleteFeedback = async (id)=>{
         if(window.confirm('Are you sure you want to delete?')){
+            await fetch(`/feedback/${id}`, {
+                method: 'DELETE'
+            }
+            )
+
            // a high load rate method that you call on an array, it loops it through based on a condition to filter something out. 
            setFeedback(feedback.filter((item)=>(
               //The will return the array - the item we are deleting
@@ -49,21 +59,42 @@ export const FeedbackProvider = ({children}) => {
            )))
         }
        }
-       //Editiin a feedback
+
+       // Editing  a feedback
        const modifyFeedback = (item) => {
         setFeedbackEdit({item, edit: true })
         }
 
-        const addFeedback = (newFeedback)=> {
-            // creating a new id for feedback
-            newFeedback.id = uuidv4();
+         
+        // Adding a feedback 
+        const addFeedback = async (newFeedback)=> {
+            // Adding data from the input form 
+            const response = await fetch('/feedback',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newFeedback)
+            })
+
+            // creating a new id for feedback we, no longer need it 
+            // newFeedback.id = uuidv4();
             // setting an array with the current feedbacks and the new feedback 
-            setFeedback([newFeedback, ...feedback])
+           const data = await response.json()
+            setFeedback([data, ...feedback])
           }
           // update feedback item
-          const updateFeedback=(id, updItem) =>{
+          const updateFeedback= async (id, updItem) =>{
+            const response = await fetch(`/feedback/${id}`, {
+                method: 'PUT',
+                headers : {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updItem)
+            })
+            const data = await response.json()
             setFeedback(feedback.map((item)=> item.id === id ? { ...item, 
-                ...updItem
+                ...data
             }: item))
 
           }

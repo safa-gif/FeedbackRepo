@@ -233,4 +233,11 @@ Https STATUS Code :
 
 - We are using a spinner gif and creating a spinner to dislay when the page is being loaded in the browser.
 
+- In the spinner compoenent, we just styled the spinner and made it load to be displayed the first thing on the browser.
+
+# Add,  Update & Delete from the server
+
+- Inside the FeedbackContext, we await data to be loaed from the server than we add it. 
+
+- The same goes to updating and deleting the data, we fetch it from the server and than we update or delete it.
 

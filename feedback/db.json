@@ -11,24 +11,14 @@
       "text": "This is feedback item 2 coming from the backend"
     },
     {
-      "id": 4,
+      "text": "hi safa i am just a test",
       "rating": 6,
-      "text": "This is feedback item 3 coming from the backend"
-    },
-    {
-      "id": 5,
-      "rating": 10,
-      "text": "This is feedback item 4 coming from the backend"
-    },
-    {
-      "rating": "9",
-      "text": "New Feedback Item",
       "id": 6
     },
     {
-      "rating": 10,
-      "text": "This is a text from postman with raw JSON text",
-      "id": 8
+      "text": "this is an updated feedback",
+      "rating": 6,
+      "id": 7
     }
   ]
 }
