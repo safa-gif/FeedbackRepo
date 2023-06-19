@@ -207,4 +207,16 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We changes the addFeeback method into a global state. We will be using `useeffect` hook because we need to know the previous state of the feedback item which we want to edit.
 
+# Using JSON Server as a BackeNd for feedbackApp
+
+- We will be using JSON Server as a Mock Backend  to fetch data. 
+Https STATUS Code :
+- 1** : Informational (Request received / processing)
+- 2**: Successs (Successfully received)
+- 3**: Redirect (Further action must be taken/redirect)
+- 4**: Client Error (Request doesn't have what it needs)
+- 5**: Server Error (Server failed to fulfill a valid request)
+
+- We need to installed it: JSON Server and used as a mock backend. When we used wwe need to add a script in our package.json to be able to run json-Server.
+
 
