@@ -211,6 +211,7 @@ Exemple: is our feeback items state we nedd to use those in multiple components 
 
 - We will be using JSON Server as a Mock Backend  to fetch data. 
 Https STATUS Code :
+
 - 1** : Informational (Request received / processing)
 - 2**: Successs (Successfully received)
 - 3**: Redirect (Further action must be taken/redirect)
@@ -218,5 +219,18 @@ Https STATUS Code :
 - 5**: Server Error (Server failed to fulfill a valid request)
 
 - We need to installed it: JSON Server and used as a mock backend. When we used wwe need to add a script in our package.json to be able to run json-Server.
+
+# Running client & Server with Concurrently
+
+- Concurrently allows us to run multiple commands with one script `"dev" : "concurrently \'npm run server\' \'npm start'\"`
+
+# Fetch Data from Mock Backend
+
+- We are fetching Data from backend to display it on the frontend.
+- We are setting isLoading state , for hen the page is being loaded.
+
+# Spinner Component :
+
+- We are using a spinner gif and creating a spinner to dislay when the page is being loaded in the browser.
 
 

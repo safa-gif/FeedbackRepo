@@ -1,29 +1,41 @@
-import { createContext , useState} from "react";
+import { createContext , useState, useEffect} from "react";
 import {v4 as uuidv4} from 'uuid'
 
 const FeedbackContext = createContext()
 
 
 export const FeedbackProvider = ({children}) => {
+    const [isLoading, setIsLoading] = useState(true)
     const [feedback, setFeedback] = useState(
         [
-            {
-                id: 1,
-                text: "This is a feedback that is coming from the feedbackContext",
-                rating: 10
-            },
-            {
-                id: 2,
-                text: "This is the second feedback that is coming from the feedbackContext",
-                rating: 9
-            },
-            {
-                id: 3,
-                text: "This is the third feedback that is coming from the feedbackContext",
-                rating: 8
-            }
+            // {
+            //     id: 1,
+            //     text: "This is a feedback that is coming from the feedbackContext",
+            //     rating: 10
+            // },
+            // {
+            //     id: 2,
+            //     text: "This is the second feedback that is com ing from the feedbackContext",
+            //     rating: 9
+            // },
+            // {
+            //     id: 3,
+            //     text: "This is the third feedback that is coming from the feedbackContext",
+            //     rating: 8
+            // }
         ]
     )
+    useEffect(()=> {
+        fetchFeedback()
+    },[])
+
+    //Fetch feedback
+    const fetchFeedback = async () => {
+        const response = await fetch(`http://localhost:5000/feedback?_sort=id&_order=desc`)
+        const data = await response.json()
+        setFeedback(data)
+        setIsLoading(false)
+    }
     const [feedbackEdit, setFeedbackEdit] = useState({
         item: {},
         edit: false
@@ -58,6 +70,7 @@ export const FeedbackProvider = ({children}) => {
     return <FeedbackContext.Provider value={{
         feedback: feedback,
         feedbackEdit,
+        isLoading,
         deleteFeedback,
         modifyFeedback,
         addFeedback,

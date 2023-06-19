@@ -6,29 +6,29 @@ import { useContext } from 'react';
 import FeedbackContext from '../context/FeedbackContext';
 function FeedbackList() {
 
-    const {feedback} = useContext(FeedbackContext)
+    const {feedback, isLoading} = useContext(FeedbackContext)
     //conditioning the output based on the existance or the length of the feedback
-   if(!feedback || feedback.length === 0){
+   if(!isLoading && (!feedback || feedback.length === 0)){
     return <p>There is no feedback yet</p>;
    }
-    return (
-
+   return isLoading? <h3>Loading ...</h3> : (
     <div className='feedback-list'>
-        {/* mapping the props pf feedback */}
-        <AnimatePresence>
-         
-        {feedback.map((item)=>(
-           <motion.div key={item.id} initial={{opacity:0}}
-           animate={{opacity:1}} exit={{opacity:0}}>
-            <FeedbackItem key={item.id} item={item} >
-        </FeedbackItem>
-        {/* <div>{item.rating}</div> */} </motion.div>
-        
-      ))}
-        </AnimatePresence>
-      
-    </div>
-  )
+    {/* mapping the props pf feedback */}
+    <AnimatePresence>
+     
+    {feedback.map((item)=>(
+       <motion.div key={item.id} initial={{opacity:0}}
+       animate={{opacity:1}} exit={{opacity:0}}>
+        <FeedbackItem key={item.id} item={item} >
+    </FeedbackItem>
+    {/* <div>{item.rating}</div> */} </motion.div>
+    
+  ))}
+    </AnimatePresence>
+  
+</div>
+   )
+    
 
 
 
