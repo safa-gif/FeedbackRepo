@@ -11,8 +11,8 @@
       "text": "This is feedback item 2 coming from the backend"
     },
     {
-      "text": "hi safa i am just a test",
       "rating": 6,
+      "text": "Modification du feedback du JSON Server avec POSTMAN",
       "id": 6
     },
     {
